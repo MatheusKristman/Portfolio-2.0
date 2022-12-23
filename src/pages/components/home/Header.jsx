@@ -8,12 +8,8 @@ function Header() {
     setIsMenuClicked(!isMenuClicked);
   }
 
-  const checkIfMenuIsClicked = isMenuClicked
-    ? 'menu-box menu-active'
-    : 'menu-box';
-  const changeMenuIcon = isMenuClicked
-    ? 'menu-container__btn menu-clicked'
-    : 'menu-container__btn';
+  const checkIfMenuIsClicked = isMenuClicked ? 'menu-box menu-active' : 'menu-box';
+  const changeMenuIcon = isMenuClicked ? 'menu-container__btn menu-clicked' : 'menu-container__btn';
 
   return (
     <header className="header wrapper">
@@ -23,11 +19,7 @@ function Header() {
         </div>
 
         <div className="menu-container">
-          <button
-            type="button"
-            onClick={handleMenuClick}
-            className={changeMenuIcon}
-          >
+          <button type="button" onClick={handleMenuClick} className={changeMenuIcon}>
             <span className="bar" />
           </button>
 

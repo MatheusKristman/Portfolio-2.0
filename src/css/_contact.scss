@@ -1,0 +1,175 @@
+.contact {
+  margin-top: 50px;
+
+  &__container {
+    width: 100%;
+    position: relative;
+
+    .contact-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 100px;
+
+      .contact-info {
+        width: 90%;
+        position: relative;
+
+        &::after {
+          content: '';
+          display: block;
+          width: 90%;
+          padding-bottom: 62%;
+          position: absolute;
+          top: calc(100% + 25px);
+          left: -45px;
+          background-image: url('../images/dots-contact.svg');
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
+          z-index: 1;
+        }
+
+        &__title {
+          width: 100%;
+          font-size: 1.875rem;
+          font-weight: 700;
+          line-height: 35px;
+          text-align: center;
+          color: #fff;
+        }
+
+        &__text {
+          width: 100%;
+          font-size: 1.563rem;
+          font-weight: 500;
+          line-height: 30px;
+          text-align: center;
+          color: #fff;
+          display: block;
+          margin-top: 25px;
+        }
+
+        &__whatsapp {
+          background-color: $darkGray;
+          border: 2px solid $orange;
+          padding: 15px 30px;
+          font-family: $montserrat;
+          font-size: 1.2rem;
+          font-weight: 500;
+          color: $orange;
+          border-radius: 8px;
+          margin: 35px auto 0 auto;
+          display: flex;
+          align-items: center;
+
+          i {
+            margin-right: 15px;
+            font-size: 2rem;
+          }
+        }
+      }
+
+      .contact-form {
+        width: 100%;
+        background-color: #191919;
+        border-radius: 10px;
+        padding: 35px 20px;
+        position: relative;
+        z-index: 2;
+
+        &__form {
+          .name-wrapper,
+          .email-wrapper,
+          .subject-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 25px;
+
+            label {
+              font-size: 1rem;
+              font-weight: 500;
+              color: #fff;
+            }
+
+            .name-input,
+            .email-input,
+            .subject-input {
+              font-family: $montserrat;
+              font-size: 1rem;
+              color: $orange;
+              background-color: transparent;
+              border: none;
+              height: 35px;
+              padding-left: 10px;
+              padding-right: 10px;
+              border-bottom: 2px solid $orange;
+              outline: none;
+            }
+          }
+
+          .message-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            label {
+              font-size: 1rem;
+              font-weight: 500;
+              color: #fff;
+            }
+
+            .message-input {
+              resize: none;
+              height: 150px;
+              border: none;
+              border-bottom: 2px solid $orange;
+              outline: none;
+              background-color: transparent;
+              font-family: $montserrat;
+              font-size: 1rem;
+              line-height: 25px;
+              color: $orange;
+              scrollbar-width: 5px;
+              scrollbar-color: $orange;
+              padding-left: 10px;
+              padding-right: 10px;
+
+              &::-webkit-scrollbar {
+                width: 10px;
+              }
+
+              &::-webkit-scrollbar-track {
+                background-color: #141414;
+              }
+
+              &::-webkit-scrollbar-thumb {
+                background-color: #2c2c2c;
+              }
+            }
+          }
+
+          .submit-btn {
+            background-color: $orange;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 25px;
+            font-family: $montserrat;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-top: 35px;
+          }
+        }
+      }
+    }
+
+    .contact-tag {
+      width: 80%;
+      position: absolute;
+      top: calc(100% + 10px);
+      right: -35px;
+    }
+  }
+}
