@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Context } from './Header';
 
 import aboutTag from '../../../images/about-tag.svg';
 
 function About() {
+  const { aboutRef } = useContext(Context);
+
   return (
-    <section className="about">
+    <section ref={aboutRef} className="about">
       <div className="about__title">
         <div />
         <h2>UM POUCO SOBRE MIM</h2>

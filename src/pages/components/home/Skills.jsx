@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Skill from './Skill';
+import { Context } from './Header';
 
 import html from '../../../images/html.svg';
 import sass from '../../../images/sass.svg';
@@ -11,8 +12,10 @@ import cleanCode from '../../../images/clean-code.svg';
 import skillTag from '../../../images/skills-tag.svg';
 
 function Skills() {
+  const { skillsRef } = useContext(Context);
+
   return (
-    <section className="skills wrapper">
+    <section ref={skillsRef} className="skills wrapper">
       <div className="skills__container">
         <div className="skills-box">
           <Skill image={html} tech="HTML" />

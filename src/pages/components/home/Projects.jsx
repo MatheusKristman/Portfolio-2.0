@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { Context } from './Header';
 
 import Project from './Project';
 
@@ -11,6 +12,8 @@ function Projects() {
   const [project1Hovered, setProject1Hovered] = useState(false);
   const [project2Hovered, setProject2Hovered] = useState(false);
   const [project3Hovered, setProject3Hovered] = useState(false);
+
+  const { projectsRef } = useContext(Context);
 
   function windowInDesktopMode() {
     return window.innerWidth > 1000;
@@ -39,7 +42,7 @@ function Projects() {
   }
 
   return (
-    <section className="projects wrapper">
+    <section ref={projectsRef} className="projects wrapper">
       <div className="projects__container">
         <img className="projects-tag" src={projectTag} alt="Tag" />
         <div className="projects-box">

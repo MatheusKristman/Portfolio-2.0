@@ -1,6 +1,10 @@
 .header {
   margin-top: 15px;
 
+  @include breakpoint(tablet) {
+    margin-top: 30px;
+  }
+
   &__wrapper {
     display: flex;
     align-items: center;
@@ -10,6 +14,10 @@
       width: auto;
       height: 30px;
       user-select: none;
+
+      @include breakpoint(smallScreen) {
+        height: 35px;
+      }
 
       img {
         width: 100%;
@@ -27,6 +35,10 @@
         position: relative;
         z-index: 5;
         padding: 0;
+
+        @include breakpoint(smallScreen) {
+          display: none;
+        }
 
         .bar {
           width: 30px;
@@ -95,11 +107,25 @@
         transition: transform 0.5s ease;
         z-index: 4;
 
+        @include breakpoint(smallScreen) {
+          background-color: transparent;
+          position: static;
+          padding: 0;
+          border-radius: 0;
+          transform: none;
+          transition: none;
+        }
+
         .menu {
           display: flex;
           flex-direction: column;
           align-items: flex-end;
           gap: 15px;
+
+          @include breakpoint(smallScreen) {
+            flex-direction: row;
+            gap: 35px;
+          }
 
           .menu-item {
             cursor: pointer;
@@ -108,6 +134,7 @@
               font-size: 1.25rem;
               font-weight: 500;
               color: #fff;
+              transition: color 0.4s ease;
             }
 
             .menu-line {
@@ -115,16 +142,24 @@
               width: 0%;
               height: 2px;
               transition: width 0.4s ease-in-out;
-            }
-          }
 
-          .active {
-            span {
-              color: $darkGray;
+              @include breakpoint(smallScreen) {
+                background-color: $orange;
+              }
             }
 
-            .menu-line {
-              width: 100%;
+            &:hover {
+              span {
+                color: $darkGray;
+
+                @include breakpoint(smallScreen) {
+                  color: $orange;
+                }
+              }
+
+              .menu-line {
+                width: 100%;
+              }
             }
           }
         }

@@ -1,23 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 html {
-    min-height: 100%;
-    width: 100%;
-    overflow-x: hidden;
+  min-height: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
-    height: 100%;
-    width: 100%;
-    background-color: $darkGray;
-    font-family: $montserrat;
+  height: 100%;
+  width: 100%;
+  background-color: $darkGray;
+  font-family: $montserrat;
 }
 
 button {
-    outline: none;
+  outline: none;
 }
 
 .wrapper {
-    margin-left: 25px;
-    margin-right: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+
+  @include breakpoint(tablet) {
+    margin-left: 60px;
+    margin-right: 60px;
+  }
 }
