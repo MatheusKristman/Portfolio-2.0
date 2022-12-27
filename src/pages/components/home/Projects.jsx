@@ -15,16 +15,16 @@ function Projects() {
   const [project2Hovered, setProject2Hovered] = useState(false);
   const [project3Hovered, setProject3Hovered] = useState(false);
   const [firstProjectVariant, setFirstProjectVariant] = useState({
-    visible: { opacity: 1, x: 0, transition: { duration: 1 } },
-    hidden: { opacity: 0, x: -200 },
+    visible: { opacity: 1, x: 0, y: 0, transition: { duration: 1 } },
+    hidden: { opacity: 0, x: -200, y: 0 },
   });
   const [secontProjectVariant, setSecondProjectVariant] = useState({
-    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
-    hidden: { opacity: 0, y: -200 },
+    visible: { opacity: 1, y: 0, x: 0, transition: { duration: 1 } },
+    hidden: { opacity: 0, y: -200, x: 0 },
   });
   const [thirdProjectVariant, setThirdProjectVariant] = useState({
-    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
-    hidden: { opacity: 0, y: 200 },
+    visible: { opacity: 1, y: 0, x: 0, transition: { duration: 1 } },
+    hidden: { opacity: 0, y: 200, x: 0 },
   });
 
   const { projectsRef } = useContext(Context);
@@ -61,18 +61,18 @@ function Projects() {
   useEffect(() => {
     if (window.innerWidth < 768) {
       setFirstProjectVariant({
-        visible: { opacity: 1, y: 0, transition: { duration: 1 } },
-        hidden: { opacity: 0, y: -200 },
+        visible: { opacity: 1, x: 0, y: 0, transition: { duration: 1 } },
+        hidden: { opacity: 0, x: 0, y: -200 },
       });
 
       setSecondProjectVariant({
-        visible: { opacity: 1, x: 0, transition: { duration: 1 } },
-        hidden: { opacity: 0, x: -200 },
+        visible: { opacity: 1, y: 0, x: 0, transition: { duration: 1 } },
+        hidden: { opacity: 0, y: 0, x: -200 },
       });
 
       setThirdProjectVariant({
-        visible: { opacity: 1, x: 0, transition: { duration: 1 } },
-        hidden: { opacity: 0, x: 200 },
+        visible: { opacity: 1, y: 0, x: 0, transition: { duration: 1 } },
+        hidden: { opacity: 0, y: 0, x: 200 },
       });
     }
   }, []);

@@ -11,6 +11,8 @@ body {
   width: 100%;
   background-color: $darkGray;
   font-family: $montserrat;
+  overflow-x: hidden;
+  position: relative;
 }
 
 button {
