@@ -65,12 +65,12 @@
           }
 
           .phrase {
-            font-size: 1rem;
+            font-size: 0.8rem;
             color: #fff;
             text-align: center;
 
             @include breakpoint(smallScreen) {
-              font-size: 1.125rem;
+              font-size: 1rem;
               text-align: left;
             }
           }
@@ -87,6 +87,12 @@
           }
 
           .nav-menu {
+            display: none;
+
+            @include breakpoint(smallScreen) {
+              display: block;
+            }
+
             .menu-items {
               list-style-type: none;
               display: flex;
@@ -141,16 +147,20 @@
 
           .terms-link,
           .privacy-link {
-            font-size: 1.25rem;
+            font-size: 1rem;
             color: #fff;
             cursor: pointer;
+
+            @include breakpoint(smallScreen) {
+              font-size: 1.125rem;
+            }
           }
         }
       }
 
       .socials-copyright-container {
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
         align-items: center;
         gap: 20px;
 
@@ -183,9 +193,9 @@
             height: 2px;
             width: 100%;
             background-color: $orange;
-            order: 2;
 
             @include breakpoint(smallScreen) {
+              order: 2;
               width: 50px;
             }
           }

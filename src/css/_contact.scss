@@ -92,22 +92,6 @@
           }
         }
 
-        &__text {
-          width: 100%;
-          font-size: 1.563rem;
-          font-weight: 500;
-          line-height: 30px;
-          text-align: center;
-          color: #fff;
-          display: block;
-          margin-top: 25px;
-
-          @include breakpoint(smallScreen) {
-            text-align: left;
-            margin-top: 50px;
-          }
-        }
-
         &__whatsapp {
           background-color: $darkGray;
           border: 2px solid $orange;
@@ -123,7 +107,7 @@
 
           @include breakpoint(smallScreen) {
             font-size: 1.563rem;
-            margin: 25px 0 0 0;
+            margin: 50px 0 0 0;
           }
 
           @include breakpoint(largeScreen) {

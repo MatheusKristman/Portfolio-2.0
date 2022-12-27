@@ -1,5 +1,6 @@
 .hero {
   margin-top: 50px;
+  min-height: 100vh;
 
   @include breakpoint(largeScreen) {
     margin-top: 150px;

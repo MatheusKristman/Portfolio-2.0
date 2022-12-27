@@ -2,7 +2,7 @@
   margin-top: 50px;
 
   @include breakpoint(smallScreen) {
-    margin-top: 100px;
+    margin-top: 0px;
   }
 
   &__container {

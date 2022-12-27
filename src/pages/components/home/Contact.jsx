@@ -131,9 +131,6 @@ function Contact() {
             <motion.h2 variants={titleVariant} initial="hidden" animate={control} className="contact-info__title">
               ME CHAME PARA UM PROJETO COM VOCÊ
             </motion.h2>
-            <motion.span variants={infoVariant} initial="hidden" animate={control} className="contact-info__text">
-              Se preferir outro contato
-            </motion.span>
             <motion.button
               variants={infoVariant}
               initial="hidden"
