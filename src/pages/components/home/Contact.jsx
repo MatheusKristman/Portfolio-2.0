@@ -30,6 +30,7 @@ function Contact() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
@@ -38,6 +39,7 @@ function Contact() {
   function showAlert() {
     setIsSending(false);
     setMessageSended(true);
+    reset();
   }
 
   function hideAlert() {
