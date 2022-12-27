@@ -1,4 +1,6 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import { Context } from './Header';
 
 import Project from './Project';
@@ -12,6 +14,18 @@ function Projects() {
   const [project1Hovered, setProject1Hovered] = useState(false);
   const [project2Hovered, setProject2Hovered] = useState(false);
   const [project3Hovered, setProject3Hovered] = useState(false);
+  const [firstProjectVariant, setFirstProjectVariant] = useState({
+    visible: { opacity: 1, x: 0, transition: { duration: 1 } },
+    hidden: { opacity: 0, x: -200 },
+  });
+  const [secontProjectVariant, setSecondProjectVariant] = useState({
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+    hidden: { opacity: 0, y: -200 },
+  });
+  const [thirdProjectVariant, setThirdProjectVariant] = useState({
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+    hidden: { opacity: 0, y: 200 },
+  });
 
   const { projectsRef } = useContext(Context);
 
@@ -41,12 +55,52 @@ function Projects() {
     }
   }
 
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      setFirstProjectVariant({
+        visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+        hidden: { opacity: 0, y: -200 },
+      });
+
+      setSecondProjectVariant({
+        visible: { opacity: 1, x: 0, transition: { duration: 1 } },
+        hidden: { opacity: 0, x: -200 },
+      });
+
+      setThirdProjectVariant({
+        visible: { opacity: 1, x: 0, transition: { duration: 1 } },
+        hidden: { opacity: 0, x: 200 },
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    function animateOnView() {
+      if (inView) {
+        control.start('visible');
+      }
+    }
+
+    animateOnView();
+  }, [control, inView]);
+
+  const tagVariant = {
+    visible: { opacity: 1, x: 0, transition: { duration: 1, delay: 1 } },
+    hidden: { opacity: 0, x: 200 },
+  };
+
   return (
     <section ref={projectsRef} className="projects wrapper">
-      <div className="projects__container">
-        <img className="projects-tag" src={projectTag} alt="Tag" />
+      <div ref={ref} className="projects__container">
+        <motion.img variants={tagVariant} initial="hidden" animate={control} className="projects-tag" src={projectTag} alt="Tag" />
         <div className="projects-box">
           <Project
+            variant={firstProjectVariant}
+            initial="hidden"
+            animate={control}
             mouseEnter={() => mouseEnterProjects(setProject1Hovered)}
             mouseLeave={() => mouseLeaveProjects(setProject1Hovered)}
             mouseClick={() => sendToWebsite('https://www.feitocomfeltro.com.br/')}
@@ -56,6 +110,9 @@ function Projects() {
             githubLink="https://github.com/MatheusKristman/feito-com-feltro-v2"
           />
           <Project
+            variant={secontProjectVariant}
+            initial="hidden"
+            animate={control}
             mouseEnter={() => mouseEnterProjects(setProject2Hovered)}
             mouseLeave={() => mouseLeaveProjects(setProject2Hovered)}
             mouseClick={() => sendToWebsite('https://space-tourism-steel-nine.vercel.app/')}
@@ -65,6 +122,9 @@ function Projects() {
             githubLink="https://github.com/MatheusKristman/Space-Tourism"
           />
           <Project
+            variant={thirdProjectVariant}
+            initial="hidden"
+            animate={control}
             mouseEnter={() => mouseEnterProjects(setProject3Hovered)}
             mouseLeave={() => mouseLeaveProjects(setProject3Hovered)}
             mouseClick={() => sendToWebsite('https://matheuskristman.github.io/Sunnyside-Agency-Landing-Page/')}

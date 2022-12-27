@@ -25,4 +25,15 @@ button {
     margin-left: 60px;
     margin-right: 60px;
   }
+
+  @include breakpoint(largeScreen) {
+    margin-left: 120px;
+    margin-right: 120px;
+  }
+
+  @include breakpoint(extraLargeScreen) {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1400px;
+  }
 }

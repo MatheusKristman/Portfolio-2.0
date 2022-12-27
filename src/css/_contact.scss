@@ -1,6 +1,14 @@
 .contact {
   margin-top: 50px;
 
+  @include breakpoint(smallScreen) {
+    margin-top: 100px;
+  }
+
+  @include breakpoint(largeScreen) {
+    margin-top: 150px;
+  }
+
   &__container {
     width: 100%;
     position: relative;
@@ -11,9 +19,23 @@
       align-items: center;
       gap: 100px;
 
+      @include breakpoint(smallScreen) {
+        align-items: flex-start;
+        gap: 50px;
+      }
+
+      @include breakpoint(largeScreen) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
       .contact-info {
         width: 90%;
         position: relative;
+
+        @include breakpoint(smallScreen) {
+          width: 100%;
+        }
 
         &::after {
           content: '';
@@ -32,6 +54,26 @@
           @include breakpoint(tablet) {
             left: -90px;
           }
+
+          @include breakpoint(smallScreen) {
+            left: auto;
+            right: -90px;
+            width: 65%;
+            top: calc(100% + -220px);
+          }
+
+          @include breakpoint(largeScreen) {
+            right: auto;
+            left: -190px;
+            top: calc(100% + 100px);
+            width: 550px;
+            height: 332px;
+            padding-bottom: 0;
+          }
+
+          @include breakpoint(extraLargeScreen) {
+            left: -15vw;
+          }
         }
 
         &__title {
@@ -41,6 +83,13 @@
           line-height: 35px;
           text-align: center;
           color: #fff;
+
+          @include breakpoint(smallScreen) {
+            text-align: left;
+            font-size: 2.813rem;
+            line-height: 53px;
+            max-width: 600px;
+          }
         }
 
         &__text {
@@ -52,6 +101,11 @@
           color: #fff;
           display: block;
           margin-top: 25px;
+
+          @include breakpoint(smallScreen) {
+            text-align: left;
+            margin-top: 50px;
+          }
         }
 
         &__whatsapp {
@@ -67,9 +121,27 @@
           display: flex;
           align-items: center;
 
+          @include breakpoint(smallScreen) {
+            font-size: 1.563rem;
+            margin: 25px 0 0 0;
+          }
+
+          @include breakpoint(largeScreen) {
+            cursor: pointer;
+            transition: background 0.4s ease;
+
+            &:hover {
+              background-color: #f4501e31;
+            }
+          }
+
           i {
             margin-right: 15px;
             font-size: 2rem;
+
+            @include breakpoint(smallScreen) {
+              font-size: 2.9rem;
+            }
           }
         }
       }
@@ -81,6 +153,14 @@
         padding: 35px 20px;
         position: relative;
         z-index: 2;
+
+        @include breakpoint(smallScreen) {
+          padding: 50px 35px;
+        }
+
+        @include breakpoint(largeScreen) {
+          max-width: 610px;
+        }
 
         .form-result {
           position: absolute;
@@ -97,6 +177,10 @@
           border-radius: 10px;
           opacity: 0;
           animation: showing 1s ease forwards;
+
+          @include breakpoint(smallScreen) {
+            width: 300px;
+          }
         }
 
         .form-result.hide {
@@ -116,6 +200,10 @@
               font-size: 1rem;
               font-weight: 500;
               color: #fff;
+
+              @include breakpoint(smallScreen) {
+                font-size: 1.25rem;
+              }
             }
 
             .name-input,
@@ -131,6 +219,12 @@
               padding-right: 10px;
               border-bottom: 2px solid $orange;
               outline: none;
+
+              @include breakpoint(smallScreen) {
+                height: 45px;
+                padding-left: 16px;
+                padding-right: 16px;
+              }
             }
 
             .form-error {
@@ -148,6 +242,10 @@
               font-size: 1rem;
               font-weight: 500;
               color: #fff;
+
+              @include breakpoint(smallScreen) {
+                font-size: 1.25rem;
+              }
             }
 
             .message-input {
@@ -165,6 +263,11 @@
               scrollbar-color: $orange;
               padding-left: 10px;
               padding-right: 10px;
+
+              @include breakpoint(smallScreen) {
+                padding-left: 16px;
+                padding-right: 16px;
+              }
 
               &::-webkit-scrollbar {
                 width: 10px;
@@ -195,6 +298,20 @@
             font-weight: 700;
             color: #fff;
             margin-top: 35px;
+
+            @include breakpoint(smallScreen) {
+              font-size: 1.563rem;
+              margin-top: 45px;
+            }
+
+            @include breakpoint(largeScreen) {
+              cursor: pointer;
+              transition: background 0.4s ease;
+
+              &:hover {
+                background-color: #be3e17;
+              }
+            }
           }
         }
       }
@@ -208,6 +325,25 @@
 
       @include breakpoint(tablet) {
         right: -140px;
+      }
+
+      @include breakpoint(smallScreen) {
+        width: auto;
+        height: 60px;
+        position: absolute;
+        top: auto;
+        bottom: -80px;
+        right: -70px;
+      }
+
+      @include breakpoint(largeScreen) {
+        height: 100px;
+        bottom: -130px;
+        right: -160px;
+      }
+
+      @include breakpoint(extraLargeScreen) {
+        right: 0;
       }
     }
   }

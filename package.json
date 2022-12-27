@@ -13,9 +13,11 @@
     "@hookform/resolvers": "^2.9.10",
     "emailjs": "^4.0.1",
     "emailjs-com": "^3.2.0",
+    "framer-motion": "^8.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.41.1",
+    "react-intersection-observer": "^9.4.1",
     "react-router-dom": "^6.6.0",
     "yup": "^0.32.11"
   },

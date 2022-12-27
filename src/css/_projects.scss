@@ -28,6 +28,10 @@
         position: relative;
         right: -105px;
       }
+
+      @include breakpoint(largeScreen) {
+        height: 100px;
+      }
     }
 
     .projects-box {
@@ -102,6 +106,14 @@
               border: 2px solid $orange;
               display: flex;
               justify-content: center;
+              transition: background 0.4s ease, border 0.4s ease;
+
+              @include breakpoint(largeScreen) {
+                &:hover {
+                  background-color: #be3e17;
+                  border: 2px solid #be3e17;
+                }
+              }
             }
 
             .see-github {
@@ -115,6 +127,13 @@
               font-size: 1.25rem;
               display: flex;
               justify-content: center;
+              transition: background 0.4s ease;
+
+              @include breakpoint(largeScreen) {
+                &:hover {
+                  background-color: #f4501e31;
+                }
+              }
             }
           }
         }
@@ -181,6 +200,14 @@
               border: 2px solid $orange;
               display: flex;
               justify-content: center;
+              transition: background 0.4s ease, border 0.4s ease;
+
+              @include breakpoint(largeScreen) {
+                &:hover {
+                  background-color: #be3e17;
+                  border: 2px solid #be3e17;
+                }
+              }
             }
 
             .see-github {
@@ -194,6 +221,13 @@
               font-size: 1.25rem;
               display: flex;
               justify-content: center;
+              transition: background 0.4s ease;
+
+              @include breakpoint(largeScreen) {
+                &:hover {
+                  background-color: #f4501e31;
+                }
+              }
             }
           }
         }
@@ -255,6 +289,14 @@
               border: 2px solid $orange;
               display: flex;
               justify-content: center;
+              transition: background 0.4s ease, border 0.4s ease;
+
+              @include breakpoint(largeScreen) {
+                &:hover {
+                  background-color: #be3e17;
+                  border: 2px solid #be3e17;
+                }
+              }
             }
 
             .see-github {
@@ -268,6 +310,13 @@
               font-size: 1.25rem;
               display: flex;
               justify-content: center;
+              transition: background 0.4s ease;
+
+              @include breakpoint(largeScreen) {
+                &:hover {
+                  background-color: #f4501e31;
+                }
+              }
             }
           }
         }
@@ -289,6 +338,10 @@
       margin-top: 15px;
       user-select: none;
       pointer-events: none;
+
+      @include breakpoint(largeScreen) {
+        display: none;
+      }
     }
   }
 }

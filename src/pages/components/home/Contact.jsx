@@ -1,7 +1,9 @@
 /* eslint-disable no-console */
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
@@ -86,20 +88,64 @@ function Contact() {
     window.open('https://wa.me/5511910041998', '_blank');
   }
 
+  const titleVariant = {
+    visible: { opacity: 1, x: 0, transition: { duration: 1 } },
+    hidden: { opacity: 0, x: -100 },
+  };
+
+  const infoVariant = {
+    visible: { opacity: 1, x: 0, transition: { duration: 1, delay: 0.7 } },
+    hidden: { opacity: 0, x: -100 },
+  };
+
+  const formVariant = {
+    visible: { opacity: 1, x: 0, transition: { duration: 1.8 } },
+    hidden: { opacity: 0, x: 100 },
+  };
+
+  const tagVariant = {
+    visible: { opacity: 1, x: 0, transition: { duration: 1, delay: 1.5 } },
+    hidden: { opacity: 0, x: 200 },
+  };
+
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    function animateOnView() {
+      if (inView) {
+        control.start('visible');
+      }
+    }
+
+    animateOnView();
+  }, [control, inView]);
+
   return (
     <section ref={contactRef} className="contact wrapper">
-      <div className="contact__container">
+      <div ref={ref} className="contact__container">
         <div className="contact-wrapper">
           <div className="contact-info">
-            <h2 className="contact-info__title">ME CHAME PARA UM PROJETO COM VOCÊ</h2>
-            <span className="contact-info__text">Se preferir outro contato</span>
-            <button onClick={whatsappRedirect} type="button" className="contact-info__whatsapp">
+            <motion.h2 variants={titleVariant} initial="hidden" animate={control} className="contact-info__title">
+              ME CHAME PARA UM PROJETO COM VOCÊ
+            </motion.h2>
+            <motion.span variants={infoVariant} initial="hidden" animate={control} className="contact-info__text">
+              Se preferir outro contato
+            </motion.span>
+            <motion.button
+              variants={infoVariant}
+              initial="hidden"
+              animate={control}
+              onClick={whatsappRedirect}
+              type="button"
+              className="contact-info__whatsapp"
+            >
               <i className="fa-brands fa-whatsapp" />
               (11) 91004-1998
-            </button>
+            </motion.button>
           </div>
 
-          <div className="contact-form">
+          <motion.div variants={formVariant} initial="hidden" animate={control} className="contact-form">
             {messageSended && (
               <div className={hideMessageAnimation ? 'form-result hide' : 'form-result'}>
                 <span>{errorMessage ? 'Houve um erro no envio da mensagem, tente novamente' : 'Mensagem enviada com sucesso'}</span>
@@ -130,9 +176,9 @@ function Contact() {
                 {isSending ? 'Enviando' : 'Enviar'}
               </button>
             </form>
-          </div>
+          </motion.div>
         </div>
-        <img className="contact-tag" src={contactTag} alt="Tag do contato" />
+        <motion.img variants={tagVariant} initial="hidden" animate={control} className="contact-tag" src={contactTag} alt="Tag do contato" />
       </div>
     </section>
   );

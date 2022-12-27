@@ -1,23 +1,12 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useContext } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Context } from './Header';
 
 import Logo from '../../../images/logo.svg';
 
-function Footer() {
-  const { homeRef, projectsRef, skillsRef, aboutRef } = useContext(Context);
-
-  function scrollToElement(ref) {
-    window.scrollTo({
-      left: 0,
-      top: ref.current.offsetTop,
-      behavior: 'smooth',
-    });
-  }
-
+function AlternativeFooter() {
   const navigate = useNavigate();
 
   function navigateTo(url) {
@@ -35,27 +24,6 @@ function Footer() {
             </div>
 
             <div className="nav-box">
-              <nav className="nav-menu">
-                <ul className="menu-items">
-                  <li onClick={() => scrollToElement(homeRef)} className="menu-item">
-                    <span>Início</span>
-                    <div className="menu-line" />
-                  </li>
-                  <li onClick={() => scrollToElement(projectsRef)} className="menu-item">
-                    <span>Projetos</span>
-                    <div className="menu-line" />
-                  </li>
-                  <li onClick={() => scrollToElement(skillsRef)} className="menu-item">
-                    <span>Habilidades</span>
-                    <div className="menu-line" />
-                  </li>
-                  <li onClick={() => scrollToElement(aboutRef)} className="menu-item">
-                    <span>Sobre</span>
-                    <div className="menu-line" />
-                  </li>
-                </ul>
-              </nav>
-
               <span onClick={() => navigateTo('/TermosECondicoes')} className="terms-link">
                 Termos e Condições
               </span>
@@ -90,4 +58,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default AlternativeFooter;

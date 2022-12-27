@@ -1,4 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import Skill from './Skill';
 import { Context } from './Header';
 
@@ -14,18 +16,41 @@ import skillTag from '../../../images/skills-tag.svg';
 function Skills() {
   const { skillsRef } = useContext(Context);
 
+  const skillVariant = {
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+    hidden: { opacity: 0, y: -50 },
+  };
+
+  const tagVariant = {
+    visible: { opacity: 1, x: 0, transition: { duration: 1.5 } },
+    hidden: { opacity: 0, x: -200 },
+  };
+
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    function animateOnView() {
+      if (inView) {
+        control.start('visible');
+      }
+    }
+
+    animateOnView();
+  }, [control, inView]);
+
   return (
     <section ref={skillsRef} className="skills wrapper">
-      <div className="skills__container">
+      <div ref={ref} className="skills__container">
         <div className="skills-box">
-          <Skill image={html} tech="HTML" />
-          <Skill image={sass} tech="SASS" />
-          <Skill image={javascript} tech="JavaScript" />
-          <Skill image={reactjs} tech="ReactJS" />
-          <Skill image={git} tech="Git" />
-          <Skill image={cleanCode} tech="Clean Code" />
+          <Skill variant={skillVariant} initial="hidden" animate={control} image={html} tech="HTML" />
+          <Skill variant={skillVariant} initial="hidden" animate={control} image={sass} tech="SASS" />
+          <Skill variant={skillVariant} initial="hidden" animate={control} image={javascript} tech="JavaScript" />
+          <Skill variant={skillVariant} initial="hidden" animate={control} image={reactjs} tech="ReactJS" />
+          <Skill variant={skillVariant} initial="hidden" animate={control} image={git} tech="Git" />
+          <Skill variant={skillVariant} initial="hidden" animate={control} image={cleanCode} tech="Clean Code" />
         </div>
-        <img className="skills-tag" src={skillTag} alt="Tag das Habilidades" />
+        <motion.img variants={tagVariant} initial="hidden" animate={control} className="skills-tag" src={skillTag} alt="Tag das Habilidades" />
       </div>
     </section>
   );

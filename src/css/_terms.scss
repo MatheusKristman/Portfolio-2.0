@@ -1,0 +1,76 @@
+.terms {
+  background-image: url('../images/terms-bg.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 50px;
+
+  @include breakpoint(smallScreen) {
+    margin-top: 100px;
+  }
+
+  @include breakpoint(largeScreen) {
+    margin-top: 150px;
+  }
+
+  &__container {
+    .terms-parag {
+      margin-bottom: 50px;
+
+      h3 {
+        font-size: 7vw;
+        font-weight: 700;
+        color: $orange;
+        margin-bottom: 25px;
+        text-transform: uppercase;
+
+        @include breakpoint(tablet) {
+          font-size: 2.2rem;
+        }
+
+        @include breakpoint(smallScreen) {
+          font-size: 3.125rem;
+        }
+      }
+
+      h4 {
+        font-size: 5vw;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 25px;
+        text-transform: uppercase;
+
+        @include breakpoint(tablet) {
+          font-size: 1.5rem;
+        }
+
+        @include breakpoint(smallScreen) {
+          font-size: 2.188rem;
+        }
+      }
+
+      p {
+        font-size: 1rem;
+        color: #fff;
+        margin-bottom: 15px;
+        line-height: 22px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      ol {
+        margin-bottom: 15px;
+        list-style-type: decimal;
+        padding-left: 19px;
+
+        li {
+          font-size: 1rem;
+          color: #fff;
+          line-height: 22px;
+        }
+      }
+    }
+  }
+}

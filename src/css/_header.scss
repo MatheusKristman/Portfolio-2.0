@@ -5,6 +5,10 @@
     margin-top: 30px;
   }
 
+  @include breakpoint(largeScreen) {
+    margin-top: 45px;
+  }
+
   &__wrapper {
     display: flex;
     align-items: center;
@@ -19,14 +23,20 @@
         height: 35px;
       }
 
+      @include breakpoint(largeScreen) {
+        height: 45px;
+      }
+
       img {
         width: 100%;
         height: 100%;
         user-select: none;
+        cursor: pointer;
       }
     }
 
     .menu-container {
+      overflow-x: hidden;
       &__btn {
         background-color: transparent;
         border: none;
@@ -35,6 +45,7 @@
         position: relative;
         z-index: 5;
         padding: 0;
+        transition: transform 0.4s ease;
 
         @include breakpoint(smallScreen) {
           display: none;
@@ -78,6 +89,10 @@
 
       .menu-clicked {
         padding: 0;
+
+        @include breakpoint(tablet) {
+          transform: translateX(35px);
+        }
 
         .bar {
           background-color: transparent;
@@ -127,6 +142,10 @@
             gap: 35px;
           }
 
+          @include breakpoint(largeScreen) {
+            gap: 50px;
+          }
+
           .menu-item {
             cursor: pointer;
 
@@ -172,6 +191,27 @@
 
     .menu-contact-btn {
       display: none;
+
+      @include breakpoint(largeScreen) {
+        display: block;
+
+        button {
+          border: 2px solid $orange;
+          padding: 10px 20px;
+          background-color: transparent;
+          font-family: $montserrat;
+          font-weight: 500;
+          font-size: 1.25rem;
+          color: $orange;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: background 0.4s ease;
+
+          &:hover {
+            background-color: #f4501e31;
+          }
+        }
+      }
     }
   }
 }

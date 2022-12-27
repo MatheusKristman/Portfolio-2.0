@@ -26,6 +26,18 @@
       width: 30%;
       padding-bottom: 24%;
     }
+
+    @include breakpoint(largeScreen) {
+      left: -120px;
+      width: 36%;
+      padding-bottom: 28%;
+    }
+
+    @include breakpoint(extraLargeScreen) {
+      left: -15vw;
+      width: 25%;
+      padding-bottom: 20%;
+    }
   }
 
   &__container {
@@ -66,16 +78,15 @@
           width: 170px;
           height: 170px;
           padding: 0;
+        }
 
-          &:nth-child(5) {
-            grid-column: 2 / 3;
-            grid-row: 2 / 3;
-          }
-
-          &:nth-child(6) {
-            grid-column: 3 / 4;
-            grid-row: 2 / 3;
-          }
+        @include breakpoint(largeScreen) {
+          width: 285px;
+          height: 285px;
+          gap: 40px;
+          padding: 60px 0 60px 0;
+          justify-content: space-between;
+          margin-top: 30px;
         }
 
         .skill-image {
@@ -84,6 +95,10 @@
 
           @include breakpoint(smallScreen) {
             width: 52px;
+          }
+
+          @include breakpoint(largeScreen) {
+            width: 88px;
           }
 
           img {
@@ -99,6 +114,10 @@
 
           @include breakpoint(smallScreen) {
             font-size: 1.25rem;
+          }
+
+          @include breakpoint(largeScreen) {
+            font-size: 1.875rem;
           }
         }
       }
@@ -121,6 +140,16 @@
         z-index: 1;
         width: auto;
         height: 70px;
+      }
+
+      @include breakpoint(largeScreen) {
+        top: calc(100% + 50px);
+        height: 100px;
+        left: -100px;
+      }
+
+      @include breakpoint(extraLargeScreen) {
+        left: 0;
       }
     }
   }

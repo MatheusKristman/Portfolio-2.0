@@ -1,9 +1,20 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
-function Project({ mouseEnter, mouseLeave, mouseClick, classContainer, image, siteLink, githubLink }) {
+function Project({ mouseEnter, mouseLeave, mouseClick, classContainer, image, siteLink, githubLink, variant, initial, animate }) {
   return (
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events
-    <div onMouseEnter={mouseEnter} onMouseLeave={mouseLeave} onClick={mouseClick} role="button" tabIndex="0" className={classContainer}>
+    <motion.div
+      variants={variant}
+      initial={initial}
+      animate={animate}
+      onMouseEnter={mouseEnter}
+      onMouseLeave={mouseLeave}
+      onClick={mouseClick}
+      role="button"
+      tabIndex="0"
+      className={classContainer}
+    >
       <div className="project-image" style={{ backgroundImage: `url(${image})` }} />
       <div className="project-options">
         <div className="project-options__container">
@@ -15,7 +26,7 @@ function Project({ mouseEnter, mouseLeave, mouseClick, classContainer, image, si
           </a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
