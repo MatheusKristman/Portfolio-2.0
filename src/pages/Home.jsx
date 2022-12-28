@@ -1,4 +1,5 @@
 import React, { useRef, useMemo } from 'react';
+import { CookiesProvider } from 'react-cookie';
 import Header, { Context } from './components/home/Header';
 import Hero from './components/home/Hero';
 import Projects from './components/home/Projects';
@@ -6,6 +7,7 @@ import Skills from './components/home/Skills';
 import About from './components/home/About';
 import Contact from './components/home/Contact';
 import Footer from './components/home/Footer';
+import Cookie from './components/home/Cookie';
 
 function Home() {
   const homeRef = useRef(null);
@@ -17,15 +19,18 @@ function Home() {
   const refs = useMemo(() => ({ homeRef, projectsRef, skillsRef, aboutRef, contactRef }), []);
 
   return (
-    <Context.Provider value={refs}>
-      <Header />
-      <Hero />
-      <Projects />
-      <Skills />
-      <About />
-      <Contact />
-      <Footer />
-    </Context.Provider>
+    <CookiesProvider>
+      <Context.Provider value={refs}>
+        <Cookie />
+        <Header />
+        <Hero />
+        <Projects />
+        <Skills />
+        <About />
+        <Contact />
+        <Footer />
+      </Context.Provider>
+    </CookiesProvider>
   );
 }
 
