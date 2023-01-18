@@ -115,11 +115,11 @@ function Projects() {
             animate={control}
             mouseEnter={() => mouseEnterProjects(setProject2Hovered)}
             mouseLeave={() => mouseLeaveProjects(setProject2Hovered)}
-            mouseClick={() => sendToWebsite('https://space-tourism-steel-nine.vercel.app/')}
+            mouseClick={() => sendToWebsite('https://gericht-restaurant-roan-ten.vercel.app/')}
             classContainer={project2Hovered ? 'project-2 activated' : 'project-2'}
             image={project2}
-            siteLink="https://space-tourism-steel-nine.vercel.app/"
-            githubLink="https://github.com/MatheusKristman/Space-Tourism"
+            siteLink="https://gericht-restaurant-roan-ten.vercel.app/"
+            githubLink="https://github.com/MatheusKristman/Gericht-Restaurant"
           />
           <Project
             variant={thirdProjectVariant}
@@ -127,11 +127,11 @@ function Projects() {
             animate={control}
             mouseEnter={() => mouseEnterProjects(setProject3Hovered)}
             mouseLeave={() => mouseLeaveProjects(setProject3Hovered)}
-            mouseClick={() => sendToWebsite('https://matheuskristman.github.io/Sunnyside-Agency-Landing-Page/')}
+            mouseClick={() => sendToWebsite('https://hoobank-three-ashy.vercel.app/')}
             classContainer={project3Hovered ? 'project-3 activated' : 'project-3'}
             image={project3}
-            siteLink="https://matheuskristman.github.io/Sunnyside-Agency-Landing-Page/"
-            githubLink="https://github.com/MatheusKristman/Sunnyside-Agency-Landing-Page"
+            siteLink="https://hoobank-three-ashy.vercel.app/"
+            githubLink="https://github.com/MatheusKristman/Hoobank"
           />
         </div>
         <span className="projects-tip">Clique para ver os sites</span>

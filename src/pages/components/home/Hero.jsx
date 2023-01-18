@@ -99,7 +99,7 @@ function Hero() {
 
             <div className="hero-socials">
               <div className="socials-line" />
-              <a className="linkedin" href="https://www.linkedin.com/in/matheus-kristman-07a947171/" target="_blank" rel="noreferrer noopener">
+              <a className="linkedin" href="https://www.linkedin.com/in/matheus-kristman/" target="_blank" rel="noreferrer noopener">
                 <i className="fa-brands fa-linkedin" />
               </a>
               <a className="instagram" href="https://www.instagram.com/tinzin.exe/" target="_blank" rel="noreferrer noopener">
