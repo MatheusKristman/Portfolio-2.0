@@ -1,156 +1,157 @@
 .skills {
-  margin-top: -38px;
-  position: relative;
-
-  &::before {
-    content: '';
+    margin-top: -38px;
     position: relative;
-    background-image: url('../images/arrows-skills.svg');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 30%;
-    left: -25px;
-    margin-bottom: -5%;
-    padding-bottom: 24%;
-    display: block;
-    z-index: 1;
 
-    @include breakpoint(tablet) {
-      left: -60px;
-      width: 40%;
-      padding-bottom: 31%;
-    }
+    &::before {
+        content: '';
+        position: relative;
+        background-image: url('../images/arrows-skills.svg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 30%;
+        left: -25px;
+        margin-bottom: -5%;
+        padding-bottom: 24%;
+        display: block;
+        z-index: 1;
 
-    @include breakpoint(smallScreen) {
-      width: 30%;
-      padding-bottom: 24%;
-    }
-
-    @include breakpoint(largeScreen) {
-      left: -120px;
-      width: 36%;
-      padding-bottom: 28%;
-    }
-
-    @include breakpoint(extraLargeScreen) {
-      left: -15vw;
-      width: 25%;
-      padding-bottom: 20%;
-    }
-  }
-
-  &__container {
-    width: 100%;
-    position: relative;
-    z-index: 2;
-
-    .skills-box {
-      width: 100%;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      gap: 10px;
-      position: relative;
-      z-index: 2;
-
-      @include breakpoint(smallScreen) {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-      .skill {
-        background-color: #1a1a1a;
-        border-radius: 10px;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        padding-top: 25%;
-        padding-bottom: 25%;
-        pointer-events: none;
+        @include breakpoint(tablet) {
+            left: -60px;
+            width: 40%;
+            padding-bottom: 31%;
+        }
 
         @include breakpoint(smallScreen) {
-          width: 170px;
-          height: 170px;
-          padding: 0;
+            width: 30%;
+            padding-bottom: 24%;
         }
 
         @include breakpoint(largeScreen) {
-          width: 285px;
-          height: 285px;
-          gap: 40px;
-          padding: 60px 0 60px 0;
-          justify-content: space-between;
-          margin-top: 30px;
+            left: -120px;
+            width: 36%;
+            padding-bottom: 28%;
         }
 
-        .skill-image {
-          width: 30%;
-          user-select: none;
+        @include breakpoint(extraLargeScreen) {
+            left: -15vw;
+            width: 25%;
+            padding-bottom: 20%;
+        }
+    }
 
-          @include breakpoint(smallScreen) {
-            width: 52px;
-          }
+    &__container {
+        width: 100%;
+        position: relative;
+        z-index: 2;
 
-          @include breakpoint(largeScreen) {
-            width: 88px;
-          }
-
-          img {
+        .skills-box {
             width: 100%;
-          }
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 10px;
+            position: relative;
+            z-index: 2;
+
+            @include breakpoint(smallScreen) {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .skill {
+                background-color: #1a1a1a;
+                border-radius: 10px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                padding-top: 25%;
+                padding-bottom: 25%;
+                pointer-events: none;
+
+                @include breakpoint(smallScreen) {
+                    width: 170px;
+                    height: 170px;
+                    padding: 0;
+                }
+
+                @include breakpoint(largeScreen) {
+                    width: 285px;
+                    height: 285px;
+                    gap: 40px;
+                    padding: 60px 0 60px 0;
+                    justify-content: space-between;
+                    margin-top: 30px;
+                }
+
+                .skill-image {
+                    width: auto;
+                    height: 50%;
+                    user-select: none;
+
+                    @include breakpoint(smallScreen) {
+                        height: 52px;
+                    }
+
+                    @include breakpoint(largeScreen) {
+                        height: 88px;
+                    }
+
+                    img {
+                        height: 100%;
+                    }
+                }
+
+                .skill-tech {
+                    font-size: 4vw;
+                    font-weight: 700;
+                    color: #fff;
+                    user-select: none;
+
+                    @include breakpoint(smallScreen) {
+                        font-size: 1.25rem;
+                    }
+
+                    @include breakpoint(largeScreen) {
+                        font-size: 1.875rem;
+                    }
+                }
+            }
         }
 
-        .skill-tech {
-          font-size: 4vw;
-          font-weight: 700;
-          color: #fff;
-          user-select: none;
+        .skills-tag {
+            width: 53%;
+            margin-left: -35px;
+            margin-top: 15px;
 
-          @include breakpoint(smallScreen) {
-            font-size: 1.25rem;
-          }
+            @include breakpoint(tablet) {
+                margin-left: -70px;
+            }
 
-          @include breakpoint(largeScreen) {
-            font-size: 1.875rem;
-          }
+            @include breakpoint(smallScreen) {
+                position: absolute;
+                margin: 0;
+                top: 160px;
+                left: -60px;
+                z-index: 1;
+                width: auto;
+                height: 70px;
+            }
+
+            @include breakpoint(largeScreen) {
+                top: calc(100% + 50px);
+                height: 100px;
+                left: -100px;
+            }
+
+            @include breakpoint(extraLargeScreen) {
+                left: 0;
+            }
         }
-      }
     }
-
-    .skills-tag {
-      width: 53%;
-      margin-left: -35px;
-      margin-top: 15px;
-
-      @include breakpoint(tablet) {
-        margin-left: -70px;
-      }
-
-      @include breakpoint(smallScreen) {
-        position: absolute;
-        margin: 0;
-        top: 160px;
-        left: -60px;
-        z-index: 1;
-        width: auto;
-        height: 70px;
-      }
-
-      @include breakpoint(largeScreen) {
-        top: calc(100% + 50px);
-        height: 100px;
-        left: -100px;
-      }
-
-      @include breakpoint(extraLargeScreen) {
-        left: 0;
-      }
-    }
-  }
 }

@@ -1,224 +1,225 @@
 .footer {
-  margin-top: 50px;
+    margin-top: 50px;
 
-  @include breakpoint(smallScreen) {
-    margin-top: 200px;
-  }
-
-  @include breakpoint(largeScreen) {
-    margin-top: 300px;
-  }
-
-  &__container {
-    width: 100%;
-    background-color: #191919;
-    border-top: 2px solid $orange;
-    padding-top: 50px;
-    padding-bottom: 50px;
-
-    .footer-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-
-      @include breakpoint(smallScreen) {
-        align-items: flex-start;
-        justify-content: space-between;
-        padding-left: 60px;
-        padding-right: 60px;
-      }
-
-      @include breakpoint(extraLargeScreen) {
-        padding-left: 0;
-        padding-right: 0;
-        margin: auto;
-        max-width: 1400px;
-      }
-
-      .logo-links-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-
-        @include breakpoint(smallScreen) {
-          flex-direction: row;
-          align-items: flex-start;
-          justify-content: space-between;
-          width: 100%;
-        }
-
-        .logo-box {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 20px;
-
-          @include breakpoint(smallScreen) {
-            align-items: flex-start;
-          }
-
-          .logo {
-            width: auto;
-            height: 35px;
-          }
-
-          .phrase {
-            font-size: 0.8rem;
-            color: #fff;
-            text-align: center;
-
-            @include breakpoint(smallScreen) {
-              font-size: 1rem;
-              text-align: left;
-            }
-          }
-        }
-
-        .nav-box {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 20px;
-
-          @include breakpoint(smallScreen) {
-            align-items: flex-end;
-          }
-
-          .nav-menu {
-            display: none;
-
-            @include breakpoint(smallScreen) {
-              display: block;
-            }
-
-            .menu-items {
-              list-style-type: none;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              gap: 20px;
-
-              @include breakpoint(smallScreen) {
-                flex-direction: row;
-                gap: 15px;
-              }
-
-              .menu-item {
-                cursor: pointer;
-
-                span {
-                  font-size: 1.25rem;
-                  font-weight: 500;
-                  color: #fff;
-                  transition: color 0.4s ease;
-                }
-
-                .menu-line {
-                  background-color: $orange;
-                  width: 0%;
-                  height: 2px;
-                  transition: width 0.4s ease-in-out;
-                }
-
-                &:hover {
-                  span {
-                    color: $orange;
-                  }
-
-                  .menu-line {
-                    width: 100%;
-                  }
-                }
-              }
-
-              .active {
-                span {
-                  color: $darkGray;
-                }
-
-                .menu-line {
-                  width: 100%;
-                }
-              }
-            }
-          }
-
-          .terms-link,
-          .privacy-link {
-            font-size: 1rem;
-            color: #fff;
-            cursor: pointer;
-
-            @include breakpoint(smallScreen) {
-              font-size: 1.125rem;
-            }
-          }
-        }
-      }
-
-      .socials-copyright-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-
-        @include breakpoint(smallScreen) {
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: flex-end;
-          width: 100%;
-        }
-
-        .copyright-box {
-          span {
-            font-size: 1rem;
-            color: $orange;
-          }
-        }
-
-        .socials-box {
-          width: 100%;
-          display: flex;
-          align-items: center;
-          gap: 10px;
-
-          @include breakpoint(smallScreen) {
-            width: auto;
-            gap: 0;
-          }
-
-          .socials-line {
-            height: 2px;
-            width: 100%;
-            background-color: $orange;
-
-            @include breakpoint(smallScreen) {
-              order: 2;
-              width: 50px;
-            }
-          }
-
-          .linkedin,
-          .instagram,
-          .github {
-            text-decoration: none;
-            color: $orange;
-            font-size: 1.5rem;
-
-            @include breakpoint(smallScreen) {
-              margin-right: 10px;
-            }
-          }
-
-          @include breakpoint(smallScreen) {
-            .github {
-              margin-right: 15px;
-            }
-          }
-        }
-      }
+    @include breakpoint(smallScreen) {
+        margin-top: 200px;
     }
-  }
+
+    @include breakpoint(largeScreen) {
+        margin-top: 300px;
+    }
+
+    &__container {
+        width: 100%;
+        background-color: #191919;
+        border-top: 2px solid $orange;
+        padding-top: 50px;
+        padding-bottom: 50px;
+
+        .footer-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+
+            @include breakpoint(smallScreen) {
+                align-items: flex-start;
+                justify-content: space-between;
+                padding-left: 60px;
+                padding-right: 60px;
+            }
+
+            @include breakpoint(extraLargeScreen) {
+                margin-left: auto;
+                padding-left: 50px;
+                padding-right: 50px;
+                margin-right: auto;
+                max-width: 1500px;
+            }
+
+            .logo-links-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+
+                @include breakpoint(smallScreen) {
+                    flex-direction: row;
+                    align-items: flex-start;
+                    justify-content: space-between;
+                    width: 100%;
+                }
+
+                .logo-box {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 20px;
+
+                    @include breakpoint(smallScreen) {
+                        align-items: flex-start;
+                    }
+
+                    .logo {
+                        width: auto;
+                        height: 35px;
+                    }
+
+                    .phrase {
+                        font-size: 0.8rem;
+                        color: #fff;
+                        text-align: center;
+
+                        @include breakpoint(smallScreen) {
+                            font-size: 1rem;
+                            text-align: left;
+                        }
+                    }
+                }
+
+                .nav-box {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 20px;
+
+                    @include breakpoint(smallScreen) {
+                        align-items: flex-end;
+                    }
+
+                    .nav-menu {
+                        display: none;
+
+                        @include breakpoint(smallScreen) {
+                            display: block;
+                        }
+
+                        .menu-items {
+                            list-style-type: none;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            gap: 20px;
+
+                            @include breakpoint(smallScreen) {
+                                flex-direction: row;
+                                gap: 15px;
+                            }
+
+                            .menu-item {
+                                cursor: pointer;
+
+                                span {
+                                    font-size: 1.25rem;
+                                    font-weight: 500;
+                                    color: #fff;
+                                    transition: color 0.4s ease;
+                                }
+
+                                .menu-line {
+                                    background-color: $orange;
+                                    width: 0%;
+                                    height: 2px;
+                                    transition: width 0.4s ease-in-out;
+                                }
+
+                                &:hover {
+                                    span {
+                                        color: $orange;
+                                    }
+
+                                    .menu-line {
+                                        width: 100%;
+                                    }
+                                }
+                            }
+
+                            .active {
+                                span {
+                                    color: $darkGray;
+                                }
+
+                                .menu-line {
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+
+                    .terms-link,
+                    .privacy-link {
+                        font-size: 1rem;
+                        color: #fff;
+                        cursor: pointer;
+
+                        @include breakpoint(smallScreen) {
+                            font-size: 1.125rem;
+                        }
+                    }
+                }
+            }
+
+            .socials-copyright-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+
+                @include breakpoint(smallScreen) {
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                    width: 100%;
+                }
+
+                .copyright-box {
+                    span {
+                        font-size: 1rem;
+                        color: $orange;
+                    }
+                }
+
+                .socials-box {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    @include breakpoint(smallScreen) {
+                        width: auto;
+                        gap: 0;
+                    }
+
+                    .socials-line {
+                        height: 2px;
+                        width: 100%;
+                        background-color: $orange;
+
+                        @include breakpoint(smallScreen) {
+                            order: 2;
+                            width: 50px;
+                        }
+                    }
+
+                    .linkedin,
+                    .instagram,
+                    .github {
+                        text-decoration: none;
+                        color: $orange;
+                        font-size: 1.5rem;
+
+                        @include breakpoint(smallScreen) {
+                            margin-right: 10px;
+                        }
+                    }
+
+                    @include breakpoint(smallScreen) {
+                        .github {
+                            margin-right: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
